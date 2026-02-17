@@ -5,11 +5,41 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     background-color: #f4f1ec;
     color: #222;
     line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Responsive font sizes based on screen resolution */
+@media (min-width: 1920px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
 }
 
 /* Navigace */
@@ -29,11 +59,48 @@ nav a {
     text-decoration: none;
     color: #222;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    font-size: 1rem;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    position: relative;
 }
 
 nav a:hover {
     opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #222;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive nav font sizes */
+@media (max-width: 768px) {
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.8rem;
+    }
+
+    nav a {
+        margin: 0 0.3rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* Header */
@@ -51,14 +118,55 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 3px;
 }
 
 header p {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     opacity: 0.9;
+}
+
+/* Responsive header font sizes */
+@media (min-width: 1920px) {
+    header h1 {
+        font-size: 4.5rem;
+    }
+
+    header p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
 }
 
 /* Sekce */
@@ -66,9 +174,51 @@ section {
     padding: 5rem 10%;
 }
 
+section h2 {
+    font-size: 2.5rem;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Responsive section font sizes */
+@media (min-width: 1920px) {
+    section h2,
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    section h2,
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 8%;
+    }
+
+    section h2,
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 2rem 5%;
+    }
+
+    section h2,
+    .section-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* O mně */
@@ -107,6 +257,24 @@ section {
     text-align: center;
 }
 
+.contact p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive contact font sizes */
+@media (max-width: 768px) {
+    .contact p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact p {
+        font-size: 0.95rem;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -114,6 +282,21 @@ footer {
     background: #222;
     color: white;
     font-size: 0.9rem;
+}
+
+/* Responsive footer font sizes */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.85rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
 }
 
 /* Responsivita */
@@ -184,6 +367,28 @@ footer {
     opacity: 0.8;
     max-width: 600px;
     margin: auto;
+    font-size: 1rem;
+}
+
+/* Responsive lightbox font sizes */
+@media (max-width: 768px) {
+    .lightbox-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .lightbox-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .lightbox-content p {
+        font-size: 0.9rem;
+    }
 }
 
 @keyframes scaleIn {
@@ -241,12 +446,58 @@ footer {
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #666;
+    font-size: 1rem;
 }
 
 .timeline-content h3 {
     margin-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
 
 .timeline-content p {
     opacity: 0.85;
+    font-size: 1rem;
+}
+
+/* Responsive timeline font sizes */
+@media (min-width: 1920px) {
+    .timeline-year {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-year {
+        font-size: 0.95rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-year {
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
 }
