@@ -139,6 +139,13 @@ header h1 {
     letter-spacing: 3px;
 }
 
+header h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
 header p {
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -151,6 +158,10 @@ header p {
         font-size: 4.5rem;
     }
 
+    header h2 {
+        font-size: 2.3rem;
+    }
+
     header p {
         font-size: 1.8rem;
     }
@@ -159,6 +170,10 @@ header p {
 @media (max-width: 1200px) {
     header h1 {
         font-size: 3.5rem;
+    }
+
+    header h2 {
+        font-size: 1.8rem;
     }
 
     header p {
@@ -171,6 +186,10 @@ header p {
         font-size: 2.5rem;
     }
 
+    header h2 {
+        font-size: 1.5rem;
+    }
+
     header p {
         font-size: 1.1rem;
     }
@@ -179,6 +198,10 @@ header p {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.8rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
     }
 
     header p {
@@ -324,10 +347,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
     .gallery {
         column-count: 2;
     }
