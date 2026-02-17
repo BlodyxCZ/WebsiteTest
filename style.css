@@ -84,6 +84,23 @@ nav a:hover::after {
     width: 100%;
 }
 
+nav .nav-logo {
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0.5rem 0.8rem;
+    border: 2px solid #222;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav .nav-logo:hover {
+    background: #222;
+    color: white;
+    transform: scale(1.05);
+}
+
 /* Responsive nav font sizes */
 @media (max-width: 768px) {
     nav a {
