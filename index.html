@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Umělkyně</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="#about">O mně</a>
+    <a href="#gallery">Tvorba</a>
+    <a href="#contact">Kontakt</a>
+    <a href="#experience">Historie</a>
+</nav>
+
+<header>
+    <h1>Nikola Kostelňáková</h1>
+    <p>Malba • Ilustrace • Umění</p>
+</header>
+
+<section id="about" class="about">
+    <h2>O mně</h2>
+    <p>
+        Tady bude nějakej popisek kterej si člověk může vymyslet z hlavy, ale zatím není a je to jenom takovej placeholder, protože nevím co tam dát.
+    </p>
+</section>
+
+<section id="gallery">
+    <h2 class="section-title">Tvorba</h2>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="assets/art/1.webp"
+                 alt="Dílo 1"
+                 data-title="Název díla 1"
+                 data-description="Popis díla 1.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/2.webp"
+                 alt="Dílo 2"
+                 data-title="Název díla 2"
+                 data-description="Popis díla 2.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/3.webp"
+                 alt="Dílo 3"
+                 data-title="Název díla 3"
+                 data-description="Popis díla 3.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/4.webp"
+                 alt="Dílo 4"
+                 data-title="Název díla 4"
+                 data-description="Popis díla 4.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/5.webp"
+                 alt="Dílo 3"
+                 data-title="Název díla 5"
+                 data-description="Popis díla 5.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/6.webp"
+                 alt="Dílo 3"
+                 data-title="Název díla 6"
+                 data-description="Popis díla 6.">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/art/7.webp"
+                 alt="Dílo 3"
+                 data-title="Název díla 7"
+                 data-description="Popis díla 7.">
+        </div>
+
+    </div>
+</section>
+
+<section id="experience">
+    <h2 class="section-title">Historie zaměstnání</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-year">+ 2023 - současnost</div>
+            <div class="timeline-content">
+                <h3>Freelance Umělkyně</h3>
+                <p>Tvorba zakázkových ilustrací, spolupráce s galeriemi a soukromými sběrateli.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">+ 2021 - 2023</div>
+            <div class="timeline-content">
+                <h3>Grafická designérka - Studio ArtVision</h3>
+                <p>Návrh vizuálních identit, plakátů a výstavních materiálů.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">+ 2019 - 2021</div>
+            <div class="timeline-content">
+                <h3>Asistentka v galerii</h3>
+                <p>Organizace výstav, komunikace s umělci a instalace expozic.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Kontakt</h2>
+    <p>Email: nikola.kostelnakova+bussiness@seznam.cz</p>
+    <p>Instagram: @deastiles</p>
+</section>
+
+<footer>
+    © 2026 Jméno Umělkyně | Všechna práva vyhrazena
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-description"></p>
+    </div>
+</div>
+
+</body>
+
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxDescription = document.getElementById("lightbox-description");
+
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        lightboxImg.src = img.src;
+        lightboxTitle.textContent = img.dataset.title;
+        lightboxDescription.textContent = img.dataset.description;
+    });
+});
+
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+    }
+});
+</script>
+
+</html>
